@@ -3,9 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/amanogawa.iml" filepath="$PROJECT_DIR$/amanogawa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/amanogawa_main.iml" filepath="$PROJECT_DIR$/.idea/modules/amanogawa_main.iml" group="amanogawa" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/amanogawa_test.iml" filepath="$PROJECT_DIR$/.idea/modules/amanogawa_test.iml" group="amanogawa" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client.iml" group="client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client_main.iml" group="client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/client/client_test.iml" group="client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/comm.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/comm.iml" group="comm" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/comm_main.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/comm_main.iml" group="comm" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/comm/comm_test.iml" filepath="$PROJECT_DIR$/.idea/modules/comm/comm_test.iml" group="comm" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server.iml" group="server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_main.iml" group="server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/server_test.iml" group="server" />
     </modules>
   </component>
 </project>
