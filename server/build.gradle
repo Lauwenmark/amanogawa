@@ -3,6 +3,7 @@ buildscript {
     ext.logback_version = '1.2.3'
     ext.apache_commons_cli_version = '1.4'
     ext.netty_version = '4.1.25.Final'
+    ext.sqlite_version = '3.23.1'
 }
 
 plugins {
@@ -17,6 +18,7 @@ dependencies {
     compile "ch.qos.logback:logback-classic:$logback_version"
     compile "io.netty:netty-all:$netty_version"
     compile "commons-cli:commons-cli:$apache_commons_cli_version"
+    compile "org.xerial:sqlite-jdbc:$sqlite_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
