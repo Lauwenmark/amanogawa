@@ -1,3 +1,10 @@
+buildscript {
+    ext.kotlin_logging_version = '1.5.4'
+    ext.logback_version = '1.2.3'
+    ext.apache_commons_cli_version = '1.4'
+    ext.netty_version = '4.1.25.Final'
+}
+
 plugins {
     id 'application'
     id 'org.jetbrains.kotlin.jvm'
@@ -6,6 +13,11 @@ plugins {
 dependencies {
     compile project(':comm')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "io.github.microutils:kotlin-logging:$kotlin_logging_version"
+    compile "ch.qos.logback:logback-classic:$logback_version"
+    compile "io.netty:netty-all:$netty_version"
+    compile "commons-cli:commons-cli:$apache_commons_cli_version"
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
 mainClassName = "eu.lauwenmark.amanogawa.client.MainKt"
