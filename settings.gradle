@@ -1,0 +1,5 @@
+rootProject.name = 'amanogawa'
+include 'comm'
+include 'server'
+include 'client'
+

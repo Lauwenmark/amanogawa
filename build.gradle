@@ -1,0 +1,41 @@
+buildscript {
+    ext.java_version = '1.8'
+    ext.kotlin_version = '1.2.50'
+    ext.dokka_version = '0.9.16-eap-3'
+    repositories {
+        jcenter()
+        maven {
+            url 'https://dl.bintray.com/kotlin/kotlin-eap'
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka_version"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'org.jetbrains.dokka'
+
+allprojects {
+    group 'eu.lauwenmark.amanogawa'
+    sourceCompatibility = "$java_version"
+    version = '0.1-SNAPSHOT'
+}
+
+subprojects {
+    compileKotlin {
+        kotlinOptions.jvmTarget = "$java_version"
+    }
+    compileTestKotlin {
+        kotlinOptions.jvmTarget = "java_version"
+    }
+    task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+        outputFormat = "javadoc"
+        outputDirectory = "$buildDir/dokkaJavadoc"
+    }
+}
