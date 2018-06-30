@@ -20,3 +20,5 @@ compileTestKotlin {
         jvmTarget = "1.8"
     }
 }
+
+mainClassName = "eu.lauwenmark.amanogawa.server.MainKt"
