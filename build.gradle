@@ -28,6 +28,10 @@ allprojects {
 }
 
 subprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
     compileKotlin {
         kotlinOptions.jvmTarget = "$java_version"
     }
