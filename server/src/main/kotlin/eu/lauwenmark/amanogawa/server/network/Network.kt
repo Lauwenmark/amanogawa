@@ -37,11 +37,13 @@ fun startNetwork(port: Int = 2044, ssl : Boolean = false) {
     }
 }
 
-class NetworkServerInitializer(val sslContext: SslContext?) : ChannelInitializer<SocketChannel?>() {
+class NetworkServerInitializer(private val sslContext: SslContext?) : ChannelInitializer<SocketChannel?>() {
 
-    private val ENCODER = StringEncoder()
-    private val DECODER = StringDecoder()
-    private val SERVER_HANDLER = NetworkServerHandler()
+    companion object {
+        val ENCODER = StringEncoder()
+        val DECODER = StringDecoder()
+        val SERVER_HANDLER = NetworkServerHandler()
+    }
 
     override fun initChannel(ch: SocketChannel?) {
         val pipeline = ch?.pipeline()
@@ -56,7 +58,7 @@ class NetworkServerInitializer(val sslContext: SslContext?) : ChannelInitializer
 
 }
 
-class NetworkServerHandler() : SimpleChannelInboundHandler<String>() {
+class NetworkServerHandler : SimpleChannelInboundHandler<String>() {
 
     companion object : KLogging()
 

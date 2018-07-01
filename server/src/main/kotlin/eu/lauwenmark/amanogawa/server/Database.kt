@@ -60,7 +60,6 @@ class SQLiteUserBackend constructor(_filename: String) : UserBackendStore {
             if (name == resultSet.getString("NICKNAME")) {
                 return User(name, resultSet.getString("EMAIL"), resultSet.getString("PASSWORDHASH"))
             }
-            logger.info { "U:"+resultSet.getString("NICKNAME") + ", E:" + resultSet.getString("EMAIL") + ", P:" + resultSet.getString("PASSWORDHASH")}
         }
         resultSet.close()
         statement.close()
