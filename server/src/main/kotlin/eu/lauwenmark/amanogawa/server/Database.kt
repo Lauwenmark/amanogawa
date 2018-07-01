@@ -46,7 +46,11 @@ class SQLiteUserBackend constructor(_filename: String) : UserBackendStore {
         connection.close()
     }
     override fun remove(user: User) {
-
+        val connection = DriverManager.getConnection("jdbc:sqlite:$filename")
+        val statement = connection.createStatement()
+        statement.executeUpdate("DELETE FROM USERS WHERE NICKNAME='${user.name}';")
+        statement.close()
+        connection.close()
     }
     override fun retrieve(name: String) : User {
         val connection = DriverManager.getConnection("jdbc:sqlite:$filename")
