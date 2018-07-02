@@ -19,8 +19,6 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
 }
 
-apply plugin: 'org.junit.platform.gradle.plugin'
-
 dependencies {
     compile project(':comm')
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
@@ -29,16 +27,19 @@ dependencies {
     compile "io.netty:netty-all:$netty_version"
     compile "commons-cli:commons-cli:$apache_commons_cli_version"
     compile "org.xerial:sqlite-jdbc:$sqlite_version"
-    testImplementation (
-        "org.junit.jupiter:junit-jupiter-api:$junit_version"
-    )
-    testRuntimeOnly (
-        "org.junit.jupiter:junit-jupiter-engine:$junit_version"
-    )
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junit_version"
 }
 
 test {
     useJUnitPlatform()
+
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = true
 }
 
 mainClassName = "eu.lauwenmark.amanogawa.server.MainKt"
